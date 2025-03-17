@@ -1,0 +1,6 @@
+{
+    "data": [{
+        "sessionTimeOut": "30000",
+        "pythonurl": "http://152.63.3.186:5000/"
+    }]
+    }
