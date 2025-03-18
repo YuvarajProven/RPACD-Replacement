@@ -1,4 +1,8 @@
-
+<head>
+<meta http-equiv='cache-control' content='no-cache'>
+<meta http-equiv='expires' content='0'>
+<meta http-equiv='pragma' content='no-cache'>
+</head>
 <header id="header" class="header">
   <div class="top-left">
     <div class="navbar-header">
@@ -120,26 +124,6 @@ document.querySelector(".logout-btn").addEventListener("click", function(event) 
     });
 });
 
-(function() {
-    if ('caches' in window) {
-        caches.keys().then(function(names) {
-            for (let name of names) caches.delete(name);
-        });
-    }
 
-    // Append cache-busting version to CSS and JS files
-    let links = document.querySelectorAll('link[rel="stylesheet"], script[src]');
-    links.forEach(link => {
-        let url = new URL(link.href || link.src, window.location.href);
-        url.searchParams.set('v', new Date().getTime()); // Add timestamp
-        if (link.tagName === "LINK") {
-            link.href = url.href;
-        } else if (link.tagName === "SCRIPT") {
-            link.src = url.href;
-        }
-    });
-
-    console.log("Cache Cleared!");
-})();
 
 </script>

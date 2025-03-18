@@ -206,6 +206,29 @@ $role = $_SESSION['role'];
     </div>
   </nav>
 </aside>
+<script>
+//   (function() {
+//     if ('caches' in window) {
+//         caches.keys().then(function(names) {
+//             for (let name of names) caches.delete(name);
+//         });
+//     }
+
+//     // Append cache-busting version to CSS and JS files
+//     let links = document.querySelectorAll('link[rel="stylesheet"], script[src]');
+//     links.forEach(link => {
+//         let url = new URL(link.href || link.src, window.location.href);
+//         url.searchParams.set('v', new Date().getTime()); // Add timestamp
+//         if (link.tagName === "LINK") {
+//             link.href = url.href;
+//         } else if (link.tagName === "SCRIPT") {
+//             link.src = url.href;
+//         }
+//     });
+
+//     console.log("Cache Cleared!");
+// })();
+</script>
 <?php include '../includeRPA/scripts.php'; ?>
 <script src="../assets/js/sidenav.js"></script>
 <script src="../assets/js/sessiontimeoutjs.js"></script>

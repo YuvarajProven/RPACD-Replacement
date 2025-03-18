@@ -274,9 +274,10 @@ $(document).ready(function () {
             } else {
               var MeSeData = {
                 labels: [
+                  "checkpoint 8",
                   "checkpoint 7",
                   "checkpoint 6",
-                  "",
+                  
                   "checkpoint 5",
                   "checkpoint 4",
                   "checkpoint 3",

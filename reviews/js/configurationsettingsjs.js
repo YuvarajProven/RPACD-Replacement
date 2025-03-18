@@ -58,6 +58,10 @@ $(document).ready(function() {
     }
     }
 
+
+  roleGetClass = $(".roleGetClass").html();
+  console.log(roleGetClass)
+
   function displayTable(msg) {
     try {
       if (msg.length > 0) {
@@ -75,7 +79,10 @@ $(document).ready(function() {
       row += '<th>Parameter Type</th>'
       row += '<th>Parameter value</th>'
       row += '<th>Date Updated</th>'
-      row += '<th>Update</th>'
+      if(roleGetClass === 'Administrator'){
+
+        row += '<th>Update</th>'
+      }
       row += '</tr></thead>'
       row += '<tbody class="displayhere">'
       for (var i = 0; i < msg.length; i++) {
@@ -92,7 +99,10 @@ $(document).ready(function() {
         }
         row += '<td><input '+readOnly+' type="text" style="text-transform: uppercase;" class="Parametervalueinputclass Parametervalueinputclass'+i+'" value="'+block.ParameterValue+'"</td>';
         row += '<td>'+formatDate(block.DateChanged)+'</td>';
-        row += '<td><img '+readOnly+' style="width: 18px;cursor: pointer;" key="'+i+'" id="'+block.ConfigParamID+'" class="updateicon" src="../images/refresh.png"/></td>';
+        if(roleGetClass === 'Administrator'){
+
+          row += '<td><img '+readOnly+'  style="width: 18px;cursor: pointer;" key="'+i+'" id="'+block.ConfigParamID+'" class="updateicon" src="../images/refresh.png"/></td>';
+        }
       }
       $(".table_generate").html(row)
       $(".dataTables_filter").hide();
